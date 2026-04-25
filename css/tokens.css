@@ -1,0 +1,40 @@
+:root {
+  /* Backgrounds */
+  --bg:        #0d1117;
+  --surface:   #161b22;
+  --surface2:  #1c2330;
+  --border:    #30363d;
+
+  /* Text */
+  --text:       #e6edf3;
+  --text-muted: #7d8590;
+  --text-dim:   #484f58;
+
+  /* Accent */
+  --accent:   #f0b429;
+  --refund:   #3fb950;
+  --owing:    #f85149;
+
+  /* Bracket colours */
+  --bracket-0:    #3d444d;
+  --bracket-19:   #2d6a4f;
+  --bracket-325:  #1e8a5a;
+  --bracket-37:   #f0b429;
+  --bracket-45:   #f85149;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
