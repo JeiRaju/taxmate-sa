@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 node_modules/
 .env
+TAXMATE_SA_INIT.md
