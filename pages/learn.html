@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Knowledge — TaxMate SA</title>
+  <meta name="description" content="Plain-language Australian tax guides for Adelaide residents. Beginner to advanced.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/learn.css">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../index.html">TaxMate <span>SA</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Calculator</a></li>
+        <li><a href="learn.html" class="active" aria-current="page">Learn</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container container--wide">
+
+    <header class="page-header animate-in">
+      <h1>Tax <em>Knowledge</em></h1>
+      <p class="subtitle">Plain-language guides for everyday Australians in Adelaide</p>
+    </header>
+
+    <div class="search-wrap animate-in">
+      <input type="search" class="search-input" id="searchInput"
+        placeholder="Search articles…" aria-label="Search tax knowledge articles">
+    </div>
+
+    <div class="category-tabs animate-in" id="categoryTabs"
+      role="tablist" aria-label="Filter articles by category"></div>
+
+    <section class="featured-section animate-in" aria-label="Start here — beginner articles">
+      <h2>Start Here</h2>
+      <div class="featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="articles-section animate-in">
+      <h2 id="articlesHeading">All Articles</h2>
+      <div class="article-grid" id="articleGrid" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <script type="module">
+    import { initLearnPage } from '../js/modules/learn.js';
+    initLearnPage();
+  </script>
+</body>
+</html>

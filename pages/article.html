@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — TaxMate SA</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/learn.css">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../index.html">TaxMate <span>SA</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Calculator</a></li>
+        <li><a href="learn.html" class="active" aria-current="page">Learn</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container container--narrow">
+
+    <a href="learn.html" class="btn-back" aria-label="Back to Knowledge Hub">← Back to Knowledge Hub</a>
+
+    <!-- Not found -->
+    <div id="articleNotFound" style="display:none; text-align:center; padding:80px 0">
+      <p style="font-size:48px">🔍</p>
+      <h2 style="margin:16px 0 8px">Article not found</h2>
+      <p style="color:var(--text-muted)">The article you're looking for doesn't exist.</p>
+      <a href="learn.html" style="color:var(--accent); margin-top:16px; display:inline-block">
+        Browse all articles →
+      </a>
+    </div>
+
+    <!-- Article -->
+    <div id="articleContent" style="display:none">
+
+      <header class="article-header animate-in">
+        <nav class="article-breadcrumb" id="articleBreadcrumb" aria-label="Breadcrumb"></nav>
+        <span class="article-icon" id="articleIcon" aria-hidden="true"></span>
+        <h1 id="articleTitle"></h1>
+        <div id="articleBadge" style="margin-top:12px"></div>
+      </header>
+
+      <div class="article-body animate-in" id="articleBody"></div>
+
+      <section class="related-section animate-in" aria-label="Related articles">
+        <h2>Related Articles</h2>
+        <div class="related-grid" id="relatedGrid"></div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <script type="module">
+    import { initArticlePage } from '../js/modules/learn.js';
+    initArticlePage();
+  </script>
+</body>
+</html>

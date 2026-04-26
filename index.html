@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaxMate SA — Tax Return Estimator</title>
+  <meta name="description" content="Estimate your Australian tax return for FY2024–25. Adelaide, South Australia.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">TaxMate <span>SA</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Calculator</a></li>
+        <li><a href="pages/learn.html">Learn</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <header class="page-header animate-in">
+      <div class="badge">ATO · FY2024–25</div>
+      <h1>Your <em>Tax Return</em><br>Estimator</h1>
+      <p class="subtitle">Adelaide, South Australia · 1 July 2024 – 30 June 2025</p>
+    </header>
+
+    <!-- 01 INCOME -->
+    <div class="section-label">01 — Income</div>
+    <div class="card animate-in">
+      <div class="grid-2">
+
+        <div class="field">
+          <label for="grossIncome">
+            Gross Employment Income
+            <span class="hint">before tax</span>
+          </label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="grossIncome" placeholder="0" min="0"
+              aria-label="Gross employment income before tax">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="taxWithheld">Tax Withheld by Employer</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="taxWithheld" placeholder="0" min="0"
+              aria-label="Tax withheld by employer">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="otherIncome">
+            Other Income
+            <span class="hint">interest, freelance, ABN</span>
+          </label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="otherIncome" placeholder="0" min="0"
+              aria-label="Other income including interest, freelance, or ABN income">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="rentalIncome">Rental Income</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="rentalIncome" placeholder="0" min="0"
+              aria-label="Rental income">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 02 DEDUCTIONS -->
+    <div class="section-label">02 — Deductions</div>
+    <div class="card animate-in">
+      <div class="grid-2">
+
+        <div class="field">
+          <label for="workExpenses">
+            Work-Related Expenses
+            <a href="pages/article.html#work-related-deductions" class="hint">What counts?</a>
+          </label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="workExpenses" placeholder="0" min="0"
+              aria-label="Work-related expenses">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="selfEducation">
+            Self-Education Expenses
+            <a href="pages/article.html#self-education" class="hint">Learn more</a>
+          </label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="selfEducation" placeholder="0" min="0"
+              aria-label="Self-education expenses">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="donations">
+            Charitable Donations
+            <span class="hint">DGR only</span>
+          </label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="donations" placeholder="0" min="0"
+              aria-label="Charitable donations to Deductible Gift Recipients only">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="rentalExpenses">Rental Property Expenses</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="rentalExpenses" placeholder="0" min="0"
+              aria-label="Rental property expenses">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="otherDeductions">Other Deductions</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="otherDeductions" placeholder="0" min="0"
+              aria-label="Other deductions">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 03 SITUATION -->
+    <div class="section-label">03 — Offsets &amp; Situation</div>
+    <div class="card animate-in">
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="name">Low Income Tax Offset (LITO)</div>
+          <div class="desc">
+            Up to $700 for taxable incomes under $66,667 — auto-applied based on your income.
+            <a href="pages/article.html#lito-explained">Learn more</a>
+          </div>
+        </div>
+        <label class="toggle" aria-label="LITO — automatically applied">
+          <input type="checkbox" id="litoCheck" checked disabled>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="name">Medicare Levy Exemption</div>
+          <div class="desc">
+            Exempt if you have low income, certain visa conditions, or full private health.
+            <a href="pages/article.html#medicare-explained">Learn more</a>
+          </div>
+        </div>
+        <label class="toggle" aria-label="Medicare levy exemption">
+          <input type="checkbox" id="medicareExempt">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="name">Private Hospital Cover</div>
+          <div class="desc">Waives Medicare Levy Surcharge if your income exceeds $93,000</div>
+        </div>
+        <label class="toggle" aria-label="Private hospital cover">
+          <input type="checkbox" id="privateHealth">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row" style="border-bottom:none">
+        <div class="toggle-info">
+          <div class="name">HELP / HECS Debt</div>
+          <div class="desc">
+            Compulsory repayments once income exceeds $54,435 — shown separately to your tax.
+            <a href="pages/article.html#help-hecs">Learn more</a>
+          </div>
+        </div>
+        <label class="toggle" aria-label="HELP or HECS student debt">
+          <input type="checkbox" id="helpDebt">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div id="helpRow" class="help-balance-row" aria-live="polite">
+        <div class="field" style="max-width:280px">
+          <label for="helpBalance">Outstanding HELP Balance</label>
+          <div class="input-wrap">
+            <span class="prefix" aria-hidden="true">$</span>
+            <input type="number" id="helpBalance" placeholder="0" min="0"
+              aria-label="Outstanding HELP or HECS balance">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 04 RESULTS -->
+    <div class="section-label">04 — Estimate</div>
+    <div class="results-panel animate-in" aria-live="polite" aria-label="Tax calculation results">
+
+      <div class="results-header">
+        <h2>Your Tax Picture</h2>
+        <span class="fy-tag">FY2024–25 · Resident</span>
+      </div>
+
+      <div class="outcome-banner" id="outcomeBanner">
+        <div class="outcome-label" id="outcomeLabel">Enter your income to begin</div>
+        <div class="outcome-amount" id="outcomeAmount">—</div>
+        <div class="outcome-sub"   id="outcomeSub"></div>
+      </div>
+
+      <div class="breakdown">
+        <div class="breakdown-row">
+          <span class="key">Total Income</span>
+          <span class="val neutral" id="rGross">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Total Deductions</span>
+          <span class="val accent"  id="rDeductions">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Taxable Income</span>
+          <span class="val neutral" id="rTaxable">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Gross Tax Payable</span>
+          <span class="val negative" id="rGrossTax">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">LITO Offset</span>
+          <span class="val positive" id="rLITO">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Medicare Levy (2%)</span>
+          <span class="val negative" id="rMedicare">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Medicare Levy Surcharge</span>
+          <span class="val negative" id="rMLS">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Net Tax Payable</span>
+          <span class="val negative" id="rNetTax">$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="key">Tax Already Withheld</span>
+          <span class="val positive" id="rWithheld">$0</span>
+        </div>
+        <div class="breakdown-row" id="helpRow2" style="display:none">
+          <span class="key">Est. HELP Repayment</span>
+          <span class="val negative" id="rHELP">$0</span>
+        </div>
+      </div>
+
+      <div class="bracket-viz">
+        <div class="bracket-label">Income Bracket Breakdown</div>
+        <div class="bracket-bar"    id="bracketBar"></div>
+        <div class="bracket-legend" id="bracketLegend"></div>
+        <div id="effectiveRate"></div>
+      </div>
+
+    </div>
+
+    <button class="btn-reset" id="btnReset" aria-label="Reset all fields">↺ Reset all fields</button>
+
+    <p class="disclaimer">
+      <strong>⚠ Estimation only.</strong> This tool uses ATO resident tax rates for FY2024–25. It does not
+      account for all offsets, credits, or complex scenarios. Always lodge your actual return via
+      <a href="https://www.ato.gov.au/individuals-and-families/your-tax-return" style="color:var(--accent)">myTax</a>
+      or a registered tax agent.
+    </p>
+
+  </main>
+
+  <script type="module" src="js/modules/ui.js"></script>
+</body>
+</html>
